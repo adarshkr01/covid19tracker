@@ -3,6 +3,24 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1"/>
+<!-- Primary Meta Tags -->
+<title>COVID-19 Tracker</title>
+<meta name="title" content="COVID-19 Tracker">
+<meta name="description" content="A better approach to COVID-19 Tracker with simple data and visualisation">
+
+<!-- Open Graph / Facebook -->
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://metatags.io/">
+<meta property="og:title" content="COVID-19 Tracker">
+<meta property="og:description" content="A better approach to COVID-19 Tracker with simple data and visualisation">
+<meta property="og:image" content="./img/coronavirus-m.jpg">
+
+<!-- Twitter -->
+<meta property="twitter:card" content="summary_large_image">
+<meta property="twitter:url" content="https://metatags.io/">
+<meta property="twitter:title" content="COVID-19 Tracker">
+<meta property="twitter:description" content="A better approach to COVID-19 Tracker with simple data and visualisation">
+<meta property="twitter:image" content="https://metatags.io/assets/meta-tags-16a33a6a8531e519cc0936fbba0ad904e52d35f34a46c97a2c9f6f7dd7d336f2.png">
 <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -19,12 +37,13 @@
 <header class="jumbotron text-center"><h1 style="font-size: 2rem;">COVID-19 Tracker</h1><h6>India</h6></header>
 	<div class="row">
 		<div class="col-md-7 mb-5">
-			<div class="card" style="box-sizing: border-box;">
+			<div class="card">
 				<div class="card-body">
 					<div class="row">
 						<div class="box confirmed">
 							<div class="text-center">
-								<span id="totalConfirmed" class="num"></span><br />								
+								<span id="totalConfirmed" class="num"></span><br />
+								<span class="label" id="new_cases"></span><br />							
 								<span class="label">Confirmed</span>
 							</div>
 						</div>
@@ -49,6 +68,39 @@
 					</div><!--Row Div-->
 				</div><!--Card Body Div-->
 			</div><!--Card Div-->
+		
+			<div class="card mt-5">
+				<div class="card-body">
+					<h5 class="m-3 text-center">Yesterday's Data</h5>
+					<div class="row">
+						<div class="box confirmed">
+								<div class="text-center">
+									<span id="yConfirmed" class="num"></span><br />								
+									<span class="label">Confirmed</span>
+								</div>
+							</div>
+							<div class="box active">
+								<div class="text-center">
+									<span id="yUntilCases" class="num"></span><br />								
+									<span class="label">Total cases until yesterday</span>
+								</div>
+							</div>
+							<div class="box recovered">
+								<div class="text-center">
+									<span id="yRecovered" class="num"></span><br />								
+									<span class="label">Recovered</span>
+								</div>
+							</div>
+							<div class="box deaths">
+								<div class="text-center">
+									<span id="yDeaths" class="num"></span><br />								
+									<span class="label">Deaths</span>
+								</div>
+							</div>
+					</div><!--Row Div-->
+				</div><!--Card-Body Div-->
+			</div><!--Card Div-->
+
 		</div><!--Col-md-6-->
 
 		<div class="col-md-5">

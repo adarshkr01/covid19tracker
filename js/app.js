@@ -22,8 +22,21 @@ fetch('https://api.covid19india.org/data.json')
     document.getElementById('loading').style.display = "none";
     document.getElementById('dataTable').innerHTML = output;
 
+    // Total Report
     document.getElementById('totalConfirmed').innerHTML = formatNum(data.statewise[0].confirmed);
     document.getElementById('totalActive').innerHTML = formatNum(data.statewise[0].active);
     document.getElementById('totalRecovered').innerHTML = formatNum(data.statewise[0].recovered);
     document.getElementById('totalDeaths').innerHTML = formatNum(data.statewise[0].deaths);
+
+    // Yesterday's Report
+    latestDate = data.cases_time_series.length-1;
+    document.getElementById('yUntilCases').innerHTML = data.cases_time_series[latestDate].totalconfirmed;
+    document.getElementById('yConfirmed').innerHTML = data.cases_time_series[latestDate].dailyconfirmed;
+    document.getElementById('yRecovered').innerHTML = data.cases_time_series[latestDate].dailyrecovered;
+    document.getElementById('yDeaths').innerHTML = data.cases_time_series[latestDate].dailydeceased;
+
+    new_cases = parseInt(data.statewise[0].confirmed)-parseInt(data.cases_time_series[latestDate].totalconfirmed);
+    if(new_cases > 0)
+        new_cases = "+" + new_cases
+    document.getElementById('new_cases').innerHTML = "[" + new_cases + "]";
 });
