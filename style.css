@@ -7,6 +7,12 @@ table {
 	font-size: 12px;
 }
 
+.jumbotron {
+	background-image: url('./img/coronavirus.jpg');
+	background-size: cover;
+	color: #fff;
+}
+
 #loading {
 	position: absolute;
 	z-index: 1000;
