@@ -3,9 +3,46 @@ function formatNum(x) {
     parts[0] = parts[0].replace(/\B(?=(\d{3})+(?!\d))/g, ",");
     return parts.join(".");
 }
-states = [
-	"Total", "Maharashtra", "Gujarat", "Delhi", "Rajasthan", "Madhya Pradesh", "Tamil Nadu", "Uttar Pradesh", "Andhra Pradesh", "Telangana", "West Bengal", "Jammu and Kashmir", "Katnataka", "Kerala", "Punjab", "Haryana", "Bihar", "Odisha", "Jharkhand", "Uttarakhand", "Himachal Pradesh", "Chhattisgarh", "Assam", "Chandigarh", "Andaman and Nicobar", "Ladakh", "Meghalaya", "Puducherry", "Goa", "Manipur", "Tripura", "Mizoram", "Arunachal Pradesh", "Nagaland", "Dadra and Nagar Haveli", "Daman and Diu", "Lakshadweep", "Sikkim"
-]
+states = {
+	TT: "Total",
+    MH: "Maharashtra",
+    GJ: "Gujarat",
+    DL: "Delhi",
+    RJ: "Rajasthan", 
+    MP: "Madhya Pradesh",
+    TN: "Tamil Nadu",
+    UP: "Uttar Pradesh",
+    AP: "Andhra Pradesh",
+    TG: "Telangana",
+    WB: "West Bengal",
+    JK: "Jammu and Kashmir",
+    KA: "Karnataka",
+    KL: "Kerala",
+    PB: "Punjab",
+    HR: "Haryana",
+    BR: "Bihar",
+    OR: "Odisha",
+    JH: "Jharkhand",
+    UT: "Uttarakhand",
+    UT: "Himachal Pradesh",
+    CT: "Chhattisgarh", 
+    AS: "Assam",
+    CH: "Chandigarh",
+    AN: "Andaman and Nicobar",
+    LA: "Ladakh",
+    ML: "Meghalaya",
+    PY: "Puducherry",
+    GA: "Goa",
+    MN: "Manipur",
+    TR: "Tripura",
+    MZ: "Mizoram",
+    AR: "Arunachal Pradesh",
+    NL: "Nagaland",
+    DN: "Dadra and Nagar Haveli",
+    DD: "Daman and Diu",
+    LD: "Lakshadweep",
+    SK: "Sikkim"
+}
 totalConfirmed = 0
 totalDeaths = 0
 
@@ -17,7 +54,7 @@ fetch('https://api.covid19india.org/data.json')
     console.log(data);
     output = '<tr><th>State/UT</th><th>Confirmed</th><th>Active</th><th>Recovered</th><th>Deaths</th></tr>'
     for(i = 1; i < 38; i++) {
-    	output += "<tr><td>" + states[i] + "</td><td>" + formatNum(data.statewise[i].confirmed) + "</td><td>" + formatNum(data.statewise[i].active) + "</td><td>" + formatNum(data.statewise[i].recovered) + "</td><td>" + formatNum(data.statewise[i].deaths) + "</td></tr>";
+    	output += "<tr><td>" + states[data.statewise[i].statecode] + "</td><td>" + formatNum(data.statewise[i].confirmed) + "</td><td>" + formatNum(data.statewise[i].active) + "</td><td>" + formatNum(data.statewise[i].recovered) + "</td><td>" + formatNum(data.statewise[i].deaths) + "</td></tr>";
     }
     document.getElementById('loading').style.display = "none";
     document.getElementById('dataTable').innerHTML = output;
