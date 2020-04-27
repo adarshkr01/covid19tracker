@@ -2,8 +2,10 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1"/>
 <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 <link rel="stylesheet" href="./style.css">
 <title>COVID-19 Tracker</title>
 </head>
@@ -16,35 +18,42 @@
 <div class="container">
 <header class="jumbotron text-center"><h2>COVID-19 Tracker</h2></header>
 	<div class="row">
-		<div class="col-md-6">
-			<div class="card">
-				<div class="card-header bg-primary text-white">Total</div>
+		<div class="col-md-7 mb-5">
+			<div class="card" style="box-sizing: border-box;">
 				<div class="card-body">
-					<table class="table" id="tallyTable">
-						<tr class="text-white" style="background-color: #ff073a">
-							<td>Confirmed</td>
-							<td id="totalConfirmed"></td>
-						</tr>
-						<tr class="text-white" style="background-color: #007bff">
-							<td>Active</td>
-							<td id="totalActive"></td>
-						</tr>
-						<tr class="text-white" style="background-color: #28a745">
-							<td>Recovered</td>
-							<td id="totalRecovered"></td>
-						</tr>
-						<tr class="text-white" style="background-color: #6c757d">
-							<td>Deaths</td>
-							<td id="totalDeaths"></td>
-						</tr>
-					</table>
-				</div>
+					<div class="row">
+						<div class="box confirmed">
+							<div class="text-center">
+								<span id="totalConfirmed" class="num"></span><br />								
+								<span style="font-size: 12px;">Confirmed</span>
+							</div>
+						</div>
+						<div class="box active">
+							<div class="text-center">
+								<span id="totalActive" class="num"></span><br />								
+								<span style="font-size: 12px;">Active</span>
+							</div>
+						</div>
+						<div class="box recovered">
+							<div class="text-center">
+								<span id="totalRecovered" class="num"></span><br />								
+								<span style="font-size: 12px;">Recovered</span>
+							</div>
+						</div>
+						<div class="box deaths">
+							<div class="text-center">
+								<span id="totalDeaths" class="num"></span><br />								
+								<span style="font-size: 12px;">Deaths</span>
+							</div>
+						</div>
+					</div><!--Row Div-->
+				</div><!--Card Body Div-->
 			</div><!--Card Div-->
 		</div><!--Col-md-6-->
 
-		<div class="col-md-6">
-			<button data-toggle="collapse" class="btn btn-info btn-block" data-target="#dataTable">State Wise Data</button>
-			<center><table id="dataTable" class="collapse table table-bordered"></table></center>
+		<div class="col-md-5">
+			<button data-toggle="collapse" class="btn btn-info btn-block" data-target="#dataTable">State Wise Data <i class="fa fa-chevron-down"></i></button>
+			<center><table id="dataTable" class="collapse table table-bordered table-responsive thead-dark"></table></center>
 		</div><!--Data table Div Col-md-8-->
 
 	</div><!--Row Div-->

@@ -20,3 +20,42 @@ table {
 #dataTable th,td {
 	text-align: center;
 }
+
+.box {
+	width: 20%;
+	height: 150px;
+	margin: 5px 2.5%;
+	/*border: 1px solid #ccc;*/
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	border-radius: 6px;
+}
+
+.num {
+	font-size: 18px;
+	font-weight: bolder;
+}
+.confirmed {
+	background-color: #ff073a;
+	color: #fff;
+}
+.active {
+	background-color: #007bff;
+	color: #fff;
+}
+.recovered {
+	background-color: #28a745;
+	color: #fff;
+}
+.deaths {
+	background-color: #6c757d;
+	color: #fff;
+}
+
+@media only screen and (max-width: 700px)
+{
+	body {
+		font-size: 13px;
+	}	
+}
