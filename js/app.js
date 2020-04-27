@@ -81,5 +81,5 @@ fetch('https://api.covid19india.org/data.json')
     currRec = parseInt(data.statewise[0].recovered) - parseInt(data.cases_time_series[latestDate].totalrecovered);
     currDec = parseInt(data.statewise[0].deaths) - parseInt(data.cases_time_series[latestDate].totaldeceased);
 
-    document.getElementById('todayStats').innerHTML = '<p>Since' + data.cases_time_series[latestDate].date + ' 11 PM,</p><p>a total of <span style="color:red;"><b>' + currConf + '</b></span> new cases were found.</p><p><span style="color: green;"><b>' + currRec + '</b></span> recovered,</p><p>and <span style="color:gray;"><b>' + currDec + '</b></span> deaths were reported.</p>';
+    document.getElementById('todayStats').innerHTML = '<p>Since ' + data.cases_time_series[latestDate].date + ' 11 PM,</p><p>a total of <span style="color:red;"><b>' + currConf + '</b></span> new cases were found.</p><p><span style="color: green;"><b>' + currRec + '</b></span> recovered,</p><p>and <span style="color:gray;"><b>' + currDec + '</b></span> deaths were reported.</p>';
 });
