@@ -22,7 +22,7 @@ fetch('https://api.covid19india.org/data.json')
     document.getElementById('loading').style.display = "none";
     document.getElementById('dataTable').innerHTML = output;
 
-    //document.getElementById('totalConfirmed').dataCount = formatNum(data.statewise[0].confirmed);
+    document.getElementById('totalConfirmed').innerHTML = formatNum(data.statewise[0].confirmed);
     document.getElementById('totalActive').innerHTML = formatNum(data.statewise[0].active);
     document.getElementById('totalRecovered').innerHTML = formatNum(data.statewise[0].recovered);
     document.getElementById('totalDeaths').innerHTML = formatNum(data.statewise[0].deaths);
