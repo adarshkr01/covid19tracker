@@ -1,0 +1,22 @@
+body {
+	font-family: 'Montserrat', sans-serif;
+	font-size: 14px;
+}
+
+table {
+	font-size: 12px;
+}
+
+#loading {
+	position: absolute;
+	z-index: 1000;
+	width: 100%;
+	height: 100%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	background-color: rgba(255,255,255,0.95);
+}
+#dataTable th,td {
+	text-align: center;
+}
