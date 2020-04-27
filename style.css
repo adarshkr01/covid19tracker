@@ -31,11 +31,14 @@ table {
 	align-items: center;
 	border-radius: 6px;
 }
-
+.label {
+	font-size: 12px;
+}
 .num {
 	font-size: 18px;
 	font-weight: bolder;
 }
+
 .confirmed {
 	background-color: #ff073a;
 	color: #fff;
@@ -57,5 +60,14 @@ table {
 {
 	body {
 		font-size: 13px;
-	}	
+	}
+	.box {
+		height: 100px;
+	}
+	.num {
+		font-size: 13px;
+	}
+	.label {
+		font-size: 10px;
+	}
 }
