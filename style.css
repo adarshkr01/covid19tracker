@@ -67,6 +67,10 @@ table {
 	body {
 		font-size: 13px;
 	}
+	.jumbotron {
+		background-image: url('./img/coronavirus-m.jpg');
+		background-size: cover;
+	}
 	.box {
 		height: 100px;
 	}
