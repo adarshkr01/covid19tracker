@@ -105,6 +105,35 @@
 					</div><!--Row Div-->
 				</div><!--Card-Body Div-->
 			</div><!--Card Div-->
+			
+			<div class="card mt-5">
+				<h4 class="text-center mt-3"><b>Statistical Graphs</b></h4>
+			<div class="col-md-12">
+				<!--Confirned Cases Graph-->
+				<div class="card">
+					<div class="card-header confirmed"><b><i class="fa fa-bar-chart"></i> Confirmed</b></div>
+					<div class="card-body">
+						<canvas id="confirmedChart"></canvas>
+					</div><!--Card Body-->
+				</div><!--Card Div (Confirmed)-->
+
+				<!--Recovered Cases Graph-->
+				<div class="card mt-3">
+					<div class="card-header recovered"><b><i class="fa fa-bar-chart"></i> Recovered</b></div>
+					<div class="card-body">
+						<canvas id="recoveredChart"></canvas>
+					</div><!--Card Body-->
+				</div><!--Card Div (Confirmed)-->
+
+				<!--Deceased Cases Graph-->
+				<div class="card mt-3">
+					<div class="card-header deaths"><b><i class="fa fa-bar-chart"></i> Deaths</b></div>
+					<div class="card-body">
+						<canvas id="deceasedChart"></canvas>
+					</div><!--Card Body-->
+				</div><!--Card Div (Confirmed)-->
+			</div>
+			</div><!--Enclosing Card Body Div-->
 
 		</div><!--Col-md-6-->
 
@@ -114,16 +143,18 @@
 		</div><!--Data table Div Col-md-8-->
 
 	</div><!--Row Div-->
+
 </div><!--Container Div-->
 
 
 <script src="./js/jquery.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.bundle.min.js" integrity="sha256-TQq84xX6vkwR0Qs1qH5ADkP+MvH0W+9E7TdHJsoIQiM=" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.js" integrity="sha256-nZaxPHA2uAaquixjSDX19TmIlbRNCOrf5HO1oHl5p70=" crossorigin="anonymous"></script>
 <script src="./js/app.js?v=2"></script>
 <script>
 	setTimeout("location.reload(true);", 300000);
 </script>
+<script src="./js/chartApp.js"></script>
 </body>
 </html>
