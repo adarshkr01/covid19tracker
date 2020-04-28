@@ -79,7 +79,7 @@ fetch('https://api.covid19india.org/data.json')
     }
     //console.log(latestDate);
 
-    document.getElementById('date').innerHTML = "( " + data.cases_time_series[latestDate].date + ")";
+    document.getElementById('date').innerHTML = "( " + yesterday + ")";
     document.getElementById('yUntilCases').innerHTML = data.cases_time_series[latestDate].totalconfirmed;
     document.getElementById('yConfirmed').innerHTML = data.cases_time_series[latestDate].dailyconfirmed;
     document.getElementById('yRecovered').innerHTML = data.cases_time_series[latestDate].dailyrecovered;
