@@ -60,14 +60,25 @@ fetch('https://api.covid19india.org/data.json')
     document.getElementById('dataTable').innerHTML = output;
 
     // Total Report
-
     document.getElementById('totalConfirmed').innerHTML = formatNum(data.statewise[0].confirmed);
     document.getElementById('totalActive').innerHTML = formatNum(data.statewise[0].active);
     document.getElementById('totalRecovered').innerHTML = formatNum(data.statewise[0].recovered);
     document.getElementById('totalDeaths').innerHTML = formatNum(data.statewise[0].deaths);
 
     // Yesterday's Report
-    latestDate = data.cases_time_series.length-1;
+    date = new Date();
+    var months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
+    yesterday = new Date(date);
+    yesterday.setDate(date.getDate() - 1);
+    yesterday = yesterday.getDate() + " " + months[yesterday.getMonth()] + " ";
+
+
+    for(i = 0; i < data.cases_time_series.length; i++) {
+        if(data.cases_time_series[i].date == yesterday)
+            latestDate = i;
+    }
+    //console.log(latestDate);
+
     document.getElementById('date').innerHTML = "( " + data.cases_time_series[latestDate].date + ")";
     document.getElementById('yUntilCases').innerHTML = data.cases_time_series[latestDate].totalconfirmed;
     document.getElementById('yConfirmed').innerHTML = data.cases_time_series[latestDate].dailyconfirmed;
@@ -83,7 +94,7 @@ fetch('https://api.covid19india.org/data.json')
     currRec = parseInt(data.statewise[0].recovered) - parseInt(data.cases_time_series[latestDate].totalrecovered);
     currDec = parseInt(data.statewise[0].deaths) - parseInt(data.cases_time_series[latestDate].totaldeceased);
 
-    document.getElementById('todayStats').innerHTML = '<p>Since ' + data.cases_time_series[latestDate].date + ' 11 PM,</p><p>a total of <span style="color:red;"><b>' + currConf + '</b></span> new cases were found.</p><p><span style="color: green;"><b>' + currRec + '</b></span> recovered,</p><p>and <span style="color:gray;"><b>' + currDec + '</b></span> deaths were reported.</p>';
+    document.getElementById('todayStats').innerHTML = '<p>Since ' + yesterday + '</p><p>a total of <span style="color:red;"><b>' + currConf + '</b></span> new cases were found.</p><p><span style="color: green;"><b>' + currRec + '</b></span> recovered,</p><p>and <span style="color:gray;"><b>' + currDec + '</b></span> deaths were reported.</p>';
 
 
 
