@@ -60,6 +60,7 @@ fetch('https://api.covid19india.org/data.json')
     document.getElementById('dataTable').innerHTML = output;
 
     // Total Report
+
     document.getElementById('totalConfirmed').innerHTML = formatNum(data.statewise[0].confirmed);
     document.getElementById('totalActive').innerHTML = formatNum(data.statewise[0].active);
     document.getElementById('totalRecovered').innerHTML = formatNum(data.statewise[0].recovered);
@@ -83,4 +84,66 @@ fetch('https://api.covid19india.org/data.json')
     currDec = parseInt(data.statewise[0].deaths) - parseInt(data.cases_time_series[latestDate].totaldeceased);
 
     document.getElementById('todayStats').innerHTML = '<p>Since ' + data.cases_time_series[latestDate].date + ' 11 PM,</p><p>a total of <span style="color:red;"><b>' + currConf + '</b></span> new cases were found.</p><p><span style="color: green;"><b>' + currRec + '</b></span> recovered,</p><p>and <span style="color:gray;"><b>' + currDec + '</b></span> deaths were reported.</p>';
+
+
+
+    // Chart.js
+    labelDate = [];
+    dataConf = [];
+    dataRec = [];
+    dataDec = [];
+    for(i = 6; i >= 0; i--) {
+        labelDate.push(data.cases_time_series[latestDate-i].date);
+        dataConf.push(data.cases_time_series[latestDate-i].dailyconfirmed);
+        dataRec.push(data.cases_time_series[latestDate-i].dailyrecovered);
+        dataDec.push(data.cases_time_series[latestDate-i].dailydeceased);
+    }
+
+    graphType = 'line';
+    var confirmedChart = document.getElementById('confirmedChart').getContext('2d');
+    var recoveredChart = document.getElementById('recoveredChart').getContext('2d');
+    var deceasedChart = document.getElementById('deceasedChart').getContext('2d');
+
+    // Confirmed char
+    var chart = new Chart(confirmedChart, {
+        type: graphType,
+        data: {
+            labels: labelDate,
+            datasets: [{
+                label: 'Confirmed cases each day',
+                backgroundColor: 'rgb(255, 99, 132)',
+                borderColor: '#ff073a',
+                data: dataConf
+            }]
+        },
+    });
+
+    // Recovered Chart
+    var chart = new Chart(recoveredChart, {
+        type: graphType,
+        data: {
+            labels: labelDate,
+            datasets: [{
+                label: 'Recovered cases each day',
+                backgroundColor: 'rgb(99, 255, 133)',
+                borderColor: '#28a745',
+                data: dataRec
+            }]
+        },
+    });
+
+    // Deceased Chart
+    var chart = new Chart(deceasedChart, {
+        type: graphType,
+        data: {
+            labels: labelDate,
+            datasets: [{
+                label: 'Death cases each day',
+                backgroundColor: '#c7c7c7',
+                borderColor: '#6c757d',
+                data: dataDec  
+            }]
+        },
+    });
+
 });
