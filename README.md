@@ -5,4 +5,7 @@ ___
 
 ### Images
 ###### Desktop:
- ![Tux, the Linux mascot](./img/favicon.png)
+ ![Desktop View](https://imgur.com/lbELVh5)
+ 
+###### Responsive view
+ ![Mobiel View](https://imgur.com/gRU48Z1)
