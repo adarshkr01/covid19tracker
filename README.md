@@ -1,2 +1,8 @@
-# covid19tracker
-A better approach to visualising COVID 19 death and active cases
+## Covid-19 Tracker
+
+###### By: Adarsh Kumar
+___
+
+### Images
+###### Desktop:
+ ![Tux, the Linux mascot](./img/favicon.png)
