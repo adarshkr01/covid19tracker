@@ -9,3 +9,7 @@ ___
  
 ###### Responsive view
  [Imgur](https://i.imgur.com/lbELVh5.png)
+
+### Source Api
+
+The data is fetched from [this API](https://github.com/covid19india/covid19india-react)
