@@ -5,7 +5,7 @@ ___
 
 ### Images
 ###### Desktop:
- [Imgur](https://imgur.com/lbELVh5")
+ [Imgur](https://imgur.com/lbELVh5)
  
 ###### Responsive view
  [Imgur](https://i.imgur.com/lbELVh5.png)
