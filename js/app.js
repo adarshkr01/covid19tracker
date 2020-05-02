@@ -72,7 +72,7 @@ fetch('https://api.covid19india.org/data.json')
     yesterday.setDate(date.getDate() - 1);
     yesterday = yesterday.getDate() + " " + months[yesterday.getMonth()] + " ";
 
-
+    latestDate = data.cases_time_series.length-1;
     for(i = 0; i < data.cases_time_series.length; i++) {
         if(data.cases_time_series[i].date == yesterday)
             latestDate = i;
