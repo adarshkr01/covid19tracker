@@ -5,10 +5,10 @@ ___
 
 ### Images
 ###### Desktop:
- [Imgur](https://imgur.com/lbELVh5)
+ ![Desktop View](https://niekon01.github.io/covid19tracker/img/Screenshots/Desktop.png)
  
 ###### Responsive view
- [Imgur](https://i.imgur.com/lbELVh5.png)
+ ![Responsive View](https://niekon01.github.io/covid19tracker/img/Screenshots/Mobile.png)
 
 ### Source Api
 
