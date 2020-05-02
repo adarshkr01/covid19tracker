@@ -122,7 +122,7 @@ fetch('https://api.covid19india.org/data.json')
             labels: labelDate,
             datasets: [{
                 label: 'Confirmed cases each day',
-                backgroundColor: 'rgb(255, 99, 132)',
+                backgroundColor: 'rgb(255, 167, 185)',
                 borderColor: '#ff073a',
                 data: dataConf
             }]
