@@ -38,8 +38,7 @@ states = {
     MZ: "Mizoram",
     AR: "Arunachal Pradesh",
     NL: "Nagaland",
-    DN: "Dadra and Nagar Haveli",
-    DD: "Daman and Diu",
+    DN: "Dadra and Nagar Haveli & Daman and Diu",
     LD: "Lakshadweep",
     SK: "Sikkim"
 }
