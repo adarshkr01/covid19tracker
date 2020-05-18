@@ -52,7 +52,7 @@ fetch('https://api.covid19india.org/data.json')
   .then((data) => {
     console.log(data);
     output = '<tr><th>State/UT</th><th>Confirmed</th><th>Active</th><th>Recovered</th><th>Deaths</th></tr>'
-    for(i = 1; i < 38; i++) {
+    for(i = 1; i < 37; i++) {
     	output += "<tr><td>" + states[data.statewise[i].statecode] + "</td><td>" + formatNum(data.statewise[i].confirmed) + "</td><td>" + formatNum(data.statewise[i].active) + "</td><td>" + formatNum(data.statewise[i].recovered) + "</td><td>" + formatNum(data.statewise[i].deaths) + "</td></tr>";
     }
     document.getElementById('loading').style.display = "none";
