@@ -24,7 +24,7 @@ states = {
     OR: "Odisha",
     JH: "Jharkhand",
     UT: "Uttarakhand",
-    UT: "Himachal Pradesh",
+    HP: "Himachal Pradesh",
     CT: "Chhattisgarh", 
     AS: "Assam",
     CH: "Chandigarh",
