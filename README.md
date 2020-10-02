@@ -1,6 +1,6 @@
 ## Covid-19 Tracker
 
-###### By: Adarsh Kumar
+#### By: Adarsh Kumar
 ___
 
 ### Images
